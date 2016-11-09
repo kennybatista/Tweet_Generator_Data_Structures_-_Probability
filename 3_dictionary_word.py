@@ -3,6 +3,7 @@ import sys
 # PSEUDOCODE
 # create the method
 
+# change the corpus
 
 # 1. Create method signature
 # 2. Open up the file
