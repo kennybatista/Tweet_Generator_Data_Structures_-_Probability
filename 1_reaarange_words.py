@@ -19,9 +19,10 @@ sample_Data = sys.argv
 # List where we will store our newly arranged words.
 rearranged_words = []
 
-# Here we loop throught the system argument list
+# Here we loop through the system argument list
 for word in range(1, len(sample_Data)):
-    # Ask Alan how the edge case works here
+    # we have the -1 at the end of this statement so that we don't get an index out of range error.
+    # Since we begin at one, then do len(sample_Data) which is the amount we type in the command line, let's say 2. It's like saying that we begin at one, then end in 3 more indexes, but since we began at one we skipped the 0, so with the -1 we bring it back so it won't crash.
     random_Int = random.randint(1, len(sample_Data)-1)
     rearranged_words.append(sample_Data[random_Int])
     sample_Data.remove(sample_Data[random_Int])
