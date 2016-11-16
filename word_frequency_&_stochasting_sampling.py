@@ -33,10 +33,11 @@ def stochastic_random(list_of_words):
     print 'Here is a random word: ' + random.choice(list_of_words.keys())
     # return l
 
+# we assign the returned single evaluated value to the text container
 text = corpus()
+# We pass in the "corpus's " returned value, which is a "list of dictionary"
 histogram(text)
 histogram = histogram(text)
 unique_words(histogram)
 frequency("and", histogram)
-
 stochastic_random(histogram)
