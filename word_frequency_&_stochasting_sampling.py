@@ -41,5 +41,6 @@ histogram(text)
 histogram = histogram(text)
 # we pass in the histogram to the unique words method, which then prints out the count of items in the dictionary
 unique_words(histogram)
+# to to freqency method, we pass in a word, and a histogram, then it will return the count of times that the word shows up in the histogram dictionary
 frequency("and", histogram)
 stochastic_random(histogram)
