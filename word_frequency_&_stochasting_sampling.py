@@ -37,7 +37,9 @@ def stochastic_random(list_of_words):
 text = corpus()
 # We pass in the "corpus's " returned value, which is a "list of dictionary"
 histogram(text)
+# We store the created histogram inside of a variable called histogram
 histogram = histogram(text)
+# we pass in the histogram to the unique words method, which then prints out the count of items in the dictionary
 unique_words(histogram)
 frequency("and", histogram)
 stochastic_random(histogram)
