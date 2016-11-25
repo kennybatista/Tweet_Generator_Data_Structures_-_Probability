@@ -5,5 +5,5 @@
 `$ python rearrange.py type words to rearrange here`
 
 
-#### more coming soon!
+#### more coming soon!!
 
