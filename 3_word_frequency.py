@@ -1,3 +1,5 @@
+from pprint import pprint
+# This method will return the corpus
 def corpus():
         # opens the file in read mode
         file_to_open = open("./words.txt","r")
@@ -10,24 +12,34 @@ def corpus():
         # we return it for whoever calls this method
         return list_of_words
 
+# This method takes in a corpus, and returns a histogram from it
 def histogram(list_of_words): # MARK: Task #1
-    word_count = {} # Empty Dictionary
+    # Empty Dictionary
+    histogram = {}
 
-    for word in list_of_words:     # loop through all of the words ----------- # if the current looping word is an existing key, access the statement
-        if word in word_count.keys():
-            word_count[word] += 1 # if the statement was accessed it means that the key was found, and that the key's (word_count[word]) value will be have += 1 added to it
+    # loop through all of the words ----------- # if the current looping word is an existing key, access the statement
+    for word in list_of_words:
+        if word in histogram.keys():
+            histogram[word] += 1 # if the statement was accessed it means that the key was found, and that the key's (word_count[word]) value will be have += 1 added to it
         else: # if the current word being looped is not a key, then add the current word as a loop and set 1 as it's value
-            word_count[word] = 1
+            histogram[word] = 1
 
-    unique_words = len(word_count) # print the dictionary => { 'and': 89, 'run': 23 }
-    return word_count
+    pprint(histogram)
+    return histogram
 
-def unique_words(unique_words): # MARK: Task #2
-    print len(unique_words)
+# MARK: Task #2
+def unique_words(histogram):
+    print ""
+    unique_words = []
+    for freqency in histogram.values():
+        if freqency == 1:
+            unique_words.append(1)
+    print '- There are ' + str(len(unique_words)) + ' unique words in the corpus'
+
 
 def frequency(word_passed_in_is, histogram): # it will take in a word, and a list
         if word_passed_in_is in histogram.keys(): # If that word we passed in is in the histogram(either key or value in the dictionary)
-            print histogram[word_passed_in_is] # prints the value of the key
+            print '- The word: and, show up ' + str(histogram[word_passed_in_is]) + ' times' # prints the value of the key
         else:
             print "that word does not exits in the corpus"
 
