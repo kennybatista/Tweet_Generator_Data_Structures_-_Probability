@@ -20,18 +20,20 @@ def histogram(list_of_words): # MARK: Task #1
     return word_dict
 
 def unique_words(unique_words): # MARK: Task #2
-    print ' There are ' + str(len(unique_words)) + ' unique words ' + 'in the dictionary'
+    print '- There are ' + str(len(histogram)) + ' unique words in the corpus'
 
 def frequency(word_passed_in_is, histogram): # it will take in a word, and a list
         if word_passed_in_is in histogram.keys(): # If that word we passed in is in the histogram(either key or value in the dictionary)
-            print 'The word "' + word_passed_in_is + '" is frequent ' + str(histogram[word_passed_in_is]) + ' times' # prints the value of the key
+            print '- The word "' + word_passed_in_is + '" is frequent ' + str(histogram[word_passed_in_is]) + ' times' # prints the value of the key
+            print ""
         else:
             print "that word does not exits in the corpus"
 
 def stochastic_random(list_of_words):
     # random_int = random.randint(0, len(list_of_words)-1)
-    print 'Here is a random word: ' + random.choice(list_of_words.keys())
-    # return l
+    print '- ' + random.choice(list_of_words.keys()) + ' -> ' + str(random.choice(list_of_words.values()))
+
+
 
 # we assign the returned single evaluated value to the text container
 text = corpus()
@@ -44,4 +46,5 @@ unique_words(histogram)
 # to to freqency method, we pass in a word, and a histogram, then it will return the count of times that the word shows up in the histogram dictionary
 frequency("and", histogram)
 # we return a random word
-stochastic_random(histogram)
+for i in range(0, 3):
+    stochastic_random(histogram)

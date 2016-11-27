@@ -30,12 +30,7 @@ def histogram(list_of_words): # MARK: Task #1
 
 # MARK: Task #2
 def unique_words(histogram):
-    print ""
-    unique_words = []
-    for freqency in histogram.values():
-        if freqency == 1:
-            unique_words.append(1)
-    print '- There are ' + str(len(unique_words)) + ' unique words in the corpus'
+    print '- There are ' + str(len(histogram)) + ' unique words in the corpus'
 
 
 def frequency(word_passed_in_is, histogram): # it will take in a word, and a list
