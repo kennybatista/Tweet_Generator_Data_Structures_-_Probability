@@ -24,7 +24,8 @@ def histogram(list_of_words): # MARK: Task #1
         else: # if the current word being looped is not a key, then add the current word as a loop and set 1 as it's value
             histogram[word] = 1
 
-    pprint(histogram)
+    # print our histogram data structure
+    # pprint(histogram)
     return histogram
 
 # MARK: Task #2
@@ -39,7 +40,7 @@ def unique_words(histogram):
 
 def frequency(word_passed_in_is, histogram): # it will take in a word, and a list
         if word_passed_in_is in histogram.keys(): # If that word we passed in is in the histogram(either key or value in the dictionary)
-            print '- The word: and, show up ' + str(histogram[word_passed_in_is]) + ' times' # prints the value of the key
+            print '- The word: and, shows up ' + str(histogram[word_passed_in_is]) + ' times' # prints the value of the key
         else:
             print "that word does not exits in the corpus"
 
