@@ -29,11 +29,21 @@ def frequency(word_passed_in_is, histogram): # it will take in a word, and a lis
         else:
             print "that word does not exits in the corpus"
 
-def stochastic_random(list_of_words):
-    # random_int = random.randint(0, len(list_of_words)-1)
-    print '- ' + random.choice(list_of_words.keys()) + ' -> ' + str(random.choice(list_of_words.values()))
+def stochastic_random(histogram_dict):
 
+    # one random word
+    # print '- ' + random.choice(histogram_dict.keys()) + ' -> ' + str(random.choice(histogram_dict.values()))
 
+    random_sentence_list = []
+    random_sentence = ""
+
+    for i in range(0, 10):
+        random_sentence_list.append(random.choice(histogram_dict.keys()))
+
+    for word in random_sentence_list:
+        random_sentence += word + ' '
+
+    print random_sentence
 
 # we assign the returned single evaluated value to the text container
 text = corpus()
@@ -46,5 +56,5 @@ unique_words(histogram)
 # to to freqency method, we pass in a word, and a histogram, then it will return the count of times that the word shows up in the histogram dictionary
 frequency("and", histogram)
 # we return a random word
-for i in range(0, 3):
-    stochastic_random(histogram)
+
+stochastic_random(histogram)
