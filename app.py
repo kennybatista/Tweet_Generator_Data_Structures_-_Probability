@@ -1,4 +1,5 @@
 import random
+import os
 from flask import Flask
 
 
@@ -32,6 +33,7 @@ def histogram(list_of_words): # MARK: Task #1
 
 def unique_words(unique_words): # MARK: Task #2
     print '- There are ' + str(len(histogram)) + ' unique words in the corpus'
+    return '- There are ' + str(len(histogram)) + ' unique words in the corpus'
 
 def frequency(word_passed_in_is, histogram): # it will take in a word, and a list
         if word_passed_in_is in histogram.keys(): # If that word we passed in is in the histogram(either key or value in the dictionary)
@@ -39,6 +41,7 @@ def frequency(word_passed_in_is, histogram): # it will take in a word, and a lis
             print ""
         else:
             print "that word does not exits in the corpus"
+
 
 
 
@@ -59,12 +62,9 @@ def stochastic_random(histogram_dict):
     print random_sentence
     return random_sentence
 
-
 @app.route('/')
-@app.route('/<stochastic_random>')
-def print_to_flask(sentence):
-    return sentence
-
+def print_to_flask():
+    return stochastic_random(histogram)
 # we assign the returned single evaluated value to the text container
 text = corpus()
 # We pass in the "corpus's " returned value, which is a "list of dictionary"
@@ -76,9 +76,8 @@ unique_words(histogram)
 # to to freqency method, we pass in a word, and a histogram, then it will return the count of times that the word shows up in the histogram dictionary
 frequency("and", histogram)
 # we return a random word
-stochastic_random(histogram)
-
+# stochastic_random(histogram)
 
 if __name__ == '__main__':
-    print_to_flask(stochastic_random(histogram))
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
