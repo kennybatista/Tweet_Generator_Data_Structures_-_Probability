@@ -3,17 +3,17 @@ import sys
 # CHALLENGE!: String reversals: reverse words, sentences
 
 # PSEUDOCODE:
-# Create a (1)single word variable or a (2)list containing words
+# Create a (1) single word variable or a (2)list containing words
 # Loop through every character of the word. Loop thorugh every character on the loops index word
 # During every iteration grab the last letter and add it to a new variable that will hold the newly arranged word.
 
-sub_reversed_word = "love"
+pre_reversed_word = "love"
 post_reversed_word = ""
 
 
 
-# for character in range(0,len(sub_reversed_word)):
-#     post_reversed_word = sub_reversed_word[len(sub_reversed_word) -1 -i] +
+# for character in range(0,len(pre_reversed_word)):
+#     post_reversed_word = pre_reversed_word[len(pre_reversed_word) -1 -i] +
 #
 # print post_reversed_word
 
