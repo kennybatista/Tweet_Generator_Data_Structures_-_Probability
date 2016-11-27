@@ -1,8 +1,13 @@
 def corpus():
+        # opens the file in read mode
         file_to_open = open("./words.txt","r")
+        # reads the file
         file_to_read = file_to_open.read()
+        # splits all of the words into a new list
         file_to_split = file_to_read.split()
+        # we place the list of values in a container
         list_of_words = file_to_split
+        # we return it for whoever calls this method
         return list_of_words
 
 def histogram(list_of_words): # MARK: Task #1
