@@ -64,7 +64,7 @@ def stochastic_random(histogram_dict):
 
 @app.route('/')
 def print_to_flask():
-    return stochastic_random(histogram)
+    return '"refresh this page for a new sentence ""' + '\n' + stochastic_random(histogram)
 # we assign the returned single evaluated value to the text container
 text = corpus()
 # We pass in the "corpus's " returned value, which is a "list of dictionary"
